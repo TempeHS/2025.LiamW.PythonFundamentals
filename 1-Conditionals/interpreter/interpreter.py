@@ -12,4 +12,4 @@ elif y == "*":
     print(float(product))
 elif y == "/":
     quotient = int(x) / int(z)
-    print(float(quotient))
+    print(round(float(quotient), 1))
