@@ -6,10 +6,10 @@ tries = 1
 
 def main():
     lvl = get_level()
-    try:
-        n = 0
-        wrong = 0
-        while n < 10:
+    n = 0
+    wrong = 0
+    while n < 10:
+        try:
             x = generate_integer(lvl)
             y = generate_integer(lvl)
             n = n + 1
@@ -23,10 +23,11 @@ def main():
                     print("EEE")
                     tries = tries + 1
                     pass
-            if tries == 3:
+            if tries >= 3:
                 wrong = wrong + 1
-    except ValueError:
-        pass
+                print(f"{x} + {y} = {x + y}")
+        except ValueError:
+            pass
     print(f"{10-int(wrong)}/10")
 
 
