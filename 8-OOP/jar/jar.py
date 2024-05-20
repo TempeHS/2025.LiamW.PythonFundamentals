@@ -1,16 +1,10 @@
 class Jar:
     def __init__(self, capacity=12):
-        self.capacity = capacity
+        self.capacity = int(capacity)
 
     @classmethod
     def __str__(self):
-        n = 0
-        list = []
-        times = self.capacity
-        while n < times:
-            list.append("🍪")
-            n = n + 1
-        return list
+        print("🍪") * int(self.capacity)
 
     def deposit(self, n):
         cookienum = self.capacity + n
@@ -19,6 +13,9 @@ class Jar:
     def withdraw(self, n):
         cookienum = self.capacity - n
         self.capacity = cookienum
+
+    def size(self):
+        print(self)
 
     @property
     def capacity(self):
@@ -31,16 +28,6 @@ class Jar:
         elif capacity > 12:
             raise ValueError("Too Many Cookie")
         self._capacity = capacity
-
-    @property
-    def size(self):
-        return self._size
-
-    @size.setter
-    def size(self, size):
-        if not size == self.capacity:
-            return ValueError
-        self._size = size
 
 
 def main():
