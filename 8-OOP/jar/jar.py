@@ -1,10 +1,10 @@
 class Jar:
-    def __init__(self, capacity=12):
+    def __init__(self, capacity=12, size=0):
         self.capacity = int(capacity)
 
     @classmethod
     def __str__(self):
-        print("🍪") * int(self.capacity)
+        return f"{self.capacity}"
 
     def deposit(self, n):
         cookienum = self.capacity + n
@@ -15,7 +15,7 @@ class Jar:
         self.capacity = cookienum
 
     def size(self):
-        print(self)
+        print("🍪" * self.capacity)
 
     @property
     def capacity(self):
